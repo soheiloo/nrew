@@ -21,11 +21,11 @@
     <div class="row wrap-form animated fadeInDown">
         <div class="col-12 align-self-end hide" id="metamask-locked">
             <i class="material-icons metamask-span">lock</i>
-            <span class="metamask-text">Metamask Locked</span>
+            <span class="metamask-text">قفل متاماسک</span>
         </div>
         <div class="col-12 align-self-end hide" id="metamask-unlocked">
-            <i class="material-icons metamask-span">lock_open</i>
-            <span class="metamask-text">Metamask Unlocked</span>
+            <i class="material-icons metamask-span">قفل باز</i>
+            <span class="metamask-text">متاماسک قفل</span>
         </div>
         <!--Asset Generator Form-->
         <div class="col-12 align-self-center">
@@ -39,11 +39,11 @@
         <div class="col-12 align-self-center">
             <form id="asset-form">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder="Name" required><a href="#asset-name"><i
+                    <input type="text" class="form-control" id="name" placeholder="نام" required><a href="#asset-name"><i
                         id="info-name" class="material-icons info">info</i></a>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="symbol" placeholder="Symbol" required><a
+                    <input type="text" class="form-control" id="symbol" placeholder="نشان" required><a
                         href="#asset-symbol"><i id="info-symbol" class="material-icons info">info</i></a>
                 </div>
                 <div class="form-group">
@@ -52,12 +52,12 @@
                     <span class="error-msg" id="decimals-error-msg"></span>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="total-supply" placeholder="Total Supply " required>
-                    <a href="#asset-supply"><i id="info-supply" class="material-icons info">info</i></a>
+                    <input type="text" class="form-control" id="total-supply" placeholder="تعداد کل " required>
+                    <a href="#asset-supply"><i id="info-supply" class="material-icons info">مستندات</i></a>
                     <span class="error-msg" id="total-supply-error-msg"></span>
                 </div>
                 <div class="form-group">
-                    <button align="center" class="submit-button btn btn-primary" id="submit-btn" type="submit">Submit
+                    <button align="center" class="submit-button btn btn-primary" id="submit-btn" type="submit">ثبت
                     </button>
                 </div>
             </form>
@@ -70,21 +70,21 @@
 <div class="container-second">
     <div class="row info-content">
         <ul class="list-group list-group-flush" id="list-group">
-            <li class="list-group-item animated fadeInUp" id="asset-name"> • <span class="info-heading">NAME : </span>
+            <li class="list-group-item animated fadeInUp" id="asset-name"> • <span class="info-heading">نام : </span>
                 <p class="info-main">نام به سادگی همان چیزی است که می خواهید توکن خود را صدا کنید، مانند بیت کوین یا اتریوم.</p>
             </li>
             <li class="list-group-item animated fadeInUp" id="asset-symbol"> • <span
-                    class="info-heading">SYMBOL : </span>
+                    class="info-heading">نشان : </span>
                 <p class="info-main">نماد نشانگر توکن شما خواهد بود، مانند BTC یا ETC (معمولا توکن ها دارای یک
                       نماد 3 حرف بزرگ).</p></li>
             <li class="list-group-item animated fadeInUp" id="asset-decimal"> • <span
-                    class="info-heading">DECIMAL :  </span>
+                    class="info-heading">اعشار :  </span>
                 <p class="info-main">اعشار عبارت است از چند رقم اعشار که توکن شما می تواند داشته باشد، که تعیین می کند چگونه
                      قابل تقسیم است به طور کلی توکن ها دارای 18 اعشار هستند که امکان تقسیم 1 نشانه را فراهم می کند
                      تریلیون ها قطعه (مثلاً با 18 اعشار شما می توانید به اندازه 0.0000000000000000001 از یک عدد داشته باشید.
                      نشانه).</p></li>
             <li class="list-group-item animated fadeInUp" id="asset-supply"> • <span
-                    class="info-heading">TOTAL SUPPLY : </span>
+                    class="info-heading">تعداد کل : </span>
                 <p class="info-main">عرضه کل تعداد توکن های موجود خواهد بود. عرضه کل رمز <strong>ارزش</strong>
                      تعداد کل نشانه ها به توان اعشار خواهد بود. (مثلاً اگر کل عرضه 1000 و
                      Decimals 18 است و سپس 100000000000000000000000 را به عنوان یک مقدار ارائه می دهد.)</p></li>
