@@ -441,7 +441,7 @@ window.addEventListener('load', async () => {
         web3 = new Web3(window.ethereum);
         // ask user for permission
         metamaskStatus
-            .html('Please allow MetaMask to view your addresses')
+            .html('به متاماسک اجازه باز شدن بدهید')
             .css({
                 "text-align": "center",
                 "color": "#0000ff"
@@ -455,13 +455,13 @@ window.addEventListener('load', async () => {
             metamaskStatus.css({ "color": "#ff0000" })
             // user rejected permission
             if (error.code == 4001) {
-                metamaskStatus.html('You reject the permission request, Please refresh to try again');
+                metamaskStatus.html('شما درخواست مجوز را رد می‌کنید، لطفاً برای امتحان دوباره آن را بازخوانی کنید');
                 console.log("User rejected the permission request.");
             } else if (error.code == -32002) {
-                metamaskStatus.html("Metamask permission request is already pending</br>Open Metamask to allow")
+                metamaskStatus.html("درخواست مجوز Metamask در حال حاضر در انتظار است</br>برای اجازه دادن، Metamask را باز کنید")
                     .css({ "color": "#ffa500" });
             } else {
-                metamaskStatus.html(error.message);
+                metamaskStatus.html(خطا);
                 console.error("Error while try to connect with Metamask", error);
             }
         });
@@ -475,7 +475,7 @@ window.addEventListener('load', async () => {
     // No web3 provider
     else {
         console.log('No web3 provider detected || web3 not exits');
-        metamaskStatus.html('You do not appear to be connected to any Ethereum network. To use this service and deploy your contract, we recommend using the <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en">MetaMask</a> plugin for Google Chrome, which allows your web browser to connect to an Ethereum network.').show();
+        metamaskStatus.html('به نظر نمی رسد که به هیچ شبکه اتریوم متصل باشید. برای استفاده از این سرویس و استقرار قرارداد خود، توصیه می کنیم از <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en">MetaMask</a> plugin for Google Chrome, which allows your web browser to connect to an Ethereum network.').show();
     }
 });
 
@@ -514,18 +514,18 @@ function start() {
         .then(function (networkId) {
             if (networkId === '1') {
                 isMainNetwork = true;
-                currentNetwork.text('You are currently at Mainnet').show();
+                currentNetwork.text('شما در حال حاضر در Mainnet هستید').show();
             } else if (networkId === '3') {
                 isRopsten = true;
-                currentNetwork.text('Your are currently at Ropsten testnet.').show();
+                currentNetwork.text('شما در حال حاضر در Ropsten testnet هستید.').show();
             } else if (networkId === '4') {
                 isRinkeby = true;
                 currentNetwork.text('Your are currently at Rinkeby testnet.').show();
             } else if (networkId === '5') {
                 isGoerli = true;
-                currentNetwork.text('Your are currently at Goerli testnet.').show();
+                currentNetwork.text('شما در حال حاضر در Goerli testnet هستید.').show();
             } else
-                currentNetwork.text('Your current network id is ' + networkId).show();
+                currentNetwork.text('شناسه شبکه فعلی شما است ' + networkId).show();
         })
         .fail(function (err) {
             console.log(err)
@@ -687,15 +687,15 @@ assetForm.submit(function (e) {
             console.log('Deployed Contract Address : ', newContractInstance.options.address);
             var newContractAddress = newContractInstance.options.address;
             if (isMainNetwork) {
-                statusText.innerHTML = 'Transaction  mined! Contract address: <a href="https://etherscan.io/token/' + newContractAddress + '" target="_blank">' + newContractAddress + '</a>'
+                statusText.innerHTML = 'Transaction  mined! Contract address: <a href="https://etherscan.io/token/' + آدرس قرارداد جدید + '" target="_blank">' + آدرس قرارداد جدید + '</a>'
             } else if (isRopsten) {
-                statusText.innerHTML = 'Transaction  mined! Contract address: <a href="https://ropsten.etherscan.io/token/' + newContractAddress + '" target="_blank">' + newContractAddress + '</a>'
+                statusText.innerHTML = 'Transaction  mined! Contract address: <a href="https://ropsten.etherscan.io/token/' +  آدرس قرارداد جدید + '" target="_blank">' + آدرس قرارداد جدید + '</a>'
             } else if (isRinkeby) {
-                statusText.innerHTML = 'Transaction  mined! Contract address: <a href="https://rinkeby.etherscan.io/token/' + newContractAddress + '" target="_blank">' + newContractAddress + '</a>'
+                statusText.innerHTML = 'Transaction  mined! Contract address: <a href="https://rinkeby.etherscan.io/token/' + آدرس قرارداد جدید + '" target="_blank">' + آدرس قرارداد جدید + '</a>'
             } else if (isGoerli) {
-                statusText.innerHTML = 'Transaction  mined! Contract address: <a href="https://goerli.etherscan.io/token/' + newContractAddress + '" target="_blank">' + newContractAddress + '</a>'
+                statusText.innerHTML = 'Transaction  mined! Contract address: <a href="https://goerli.etherscan.io/token/' + آدرس قرارداد جدید + '" target="_blank">' + آدرس قرارداد جدید + '</a>'
             } else
-                statusText.innerHTML = 'Contract deployed at address <b>' + newContractAddress + '</b> - keep a record of this.'
+                statusText.innerHTML = 'Contract deployed at address <b>' + آدرس قرارداد جدید + '</b> - keep a record of this.'
         }).catch(function (error) {
             console.error(error);
             assetFormInput.prop("disabled", false);
